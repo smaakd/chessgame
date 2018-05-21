@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Handlee" rel="stylesheet">
+</head>
+<body>
+<h1>TIC TAC TOE</h1>
+<ul id="menu">
+    <li><button onclick="spt()">Play New Game With Computer</button></li>
+    <li><button onclick="dp()">Play New Double Player Game</button> </li>
+    <li><p><a href="https://www.google.com/search?q=How+to+play+Tic+Tac+Toe">How to play??</a></p></li>
+</ul>
+
+<table id="main">
+    <tr>
+        <td id="c0" onclick="action(0)"></td>
+        <td id="c1" onclick="action(1)"></td>
+        <td id="c2" onclick="action(2)"></td>
+    </tr>
+    <tr>
+        <td id="c3" onclick="action(3)"></td>
+        <td id="c4" onclick="action(4)"></td>
+        <td id="c5" onclick="action(5)"></td>
+    </tr>
+    <tr>
+        <td id="c6" onclick="action(6)"></td>
+        <td id="c7" onclick="action(7)"></td>
+        <td id="c8" onclick="action(8)"></td>
+    </tr>
+</table>
+<div id="stats">
+    <ul id="list">
+        <li id="bar">Game Stats</li>
+    </ul>
+</div>
+<table id="score">
+    <tr>
+        <td colspan="2" id="sc">Scoreboard</td>
+    </tr>
+    <tr>
+        <td id="o"><b>O</b></td>
+        <td id="scoreo">0</td>
+    </tr>
+    <tr>
+        <td id="x"><b>X</b></b></td>
+        <td id="scorex">0</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
