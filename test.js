@@ -18,6 +18,7 @@ var movex = 0;
 var movey = 0;
 var moveno = 0;
 var mode = 0;
+var pieceflag = 0;
 
 var start = document.getElementById('start');
 var p1 = document.getElementById('p1');
@@ -86,10 +87,12 @@ function game(no){
     if(moveflag){
         return;
     }
+ 
     idnum = parseInt(no);
     var y = parseInt((idnum-1) % 8);
     var x = parseInt((idnum-1) / 8);
     var pieceno = position[x][y];
+   // alert(position);
    if (pieceno==6){
         var iseven= (x+y)%2 ;
         if(iseven){
@@ -114,16 +117,107 @@ function game(no){
             }
 
         }
-        
-        moveflag = 1 ;
+        if(willmove[idnum+8]||willmove[idnum+16]){
+            moveflag = 1 ;
+        }
         movex = x;
         movey = y;
         moveno = no;
         
     }
+    if (pieceno==3){
+        // down 
+        for(i=x+1,j=y+1;i<=7&&j<=7;i++,j++){
+            var iseven=(i+j)%2;
+            if(position[i][j]==0 || position[i][j]>=7){
+                var posno = (i*8)+j+1
+                if(iseven){
+                    document.getElementsByTagName("div")[posno].setAttribute("class","blackr"); 
+                    document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                }
+                else{
+                    document.getElementsByTagName("div")[posno].setAttribute("class","whiter"); 
+                    document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                }
+                willmove[posno]=1;
+            }
+            if(position[i][j]>0){
+                break;
+            }
+        }    
+
+      // up
+
+        for(i=x-1,j=y+1;i>=0&&j<=7;i--,j++){
+            var iseven=(i+j)%2;
+            if(position[i][j]==0 || position[i][j]>=7){
+                var posno = (i*8)+j+1
+                if(iseven){
+                    document.getElementsByTagName("div")[posno].setAttribute("class","blackr"); 
+                    document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                }
+                else{
+                    document.getElementsByTagName("div")[posno].setAttribute("class","whiter"); 
+                    document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                }
+                willmove[posno]=1;
+            }
+            if(position[i][j]>0){
+                break;
+            }    
+        }
+
+                // right
+                for(i=x-1,j=y-1;i>=0&&j>=0;j--,i--){
+                    var iseven=(i+j)%2;
+                    if(position[i][j]==0 || position[i][j]>=7){
+                        var posno = (i*8)+j+1
+                        if(iseven){
+                            document.getElementsByTagName("div")[posno].setAttribute("class","blackr"); 
+                            document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                        }
+                        else{
+                            document.getElementsByTagName("div")[posno].setAttribute("class","whiter"); 
+                            document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                        }
+                        willmove[posno]=1;
+                    }
+                    if(position[i][j]>0){
+                        break;
+                    }
+                }    
+        
+              // up
+        
+                for(i=x+1,j=y-1;i<=7&&j>=0;i++,j--){
+                    var iseven=(i+j)%2;
+                    if(position[i][j]==0 || position[i][j]>=7){
+                        var posno = (i*8)+j+1
+                        if(iseven){
+                            document.getElementsByTagName("div")[posno].setAttribute("class","blackr"); 
+                            document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                        }
+                        else{
+                            document.getElementsByTagName("div")[posno].setAttribute("class","whiter"); 
+                            document.getElementsByTagName("div")[posno].setAttribute("onclick",mv); 
+                        }
+                        willmove[posno]=1;
+                    }
+                    if(position[i][j]>0){
+                        break;
+                    }    
+                }
+//        alert (i);
+        if(willmove[idnum+7]||willmove[idnum-7]||willmove[idnum+9]||willmove[idnum-9]){
+            moveflag = 1 ;
+        }
+        movex = x;
+        movey = y;
+        moveno = no;
+    }
     if (pieceno==1){
         // down 
-        for(i=x+1,j=y;i<=8;i++){
+        for(i=x+1,j=y;i<=7;i++){
             var iseven=(i+j)%2;
             if(position[i][j]==0 || position[i][j]>=7){
                 var posno = (i*8)+j+1
@@ -164,7 +258,7 @@ function game(no){
         }
 
                 // right
-                for(i=x,j=y+1;j<=8;j++){
+                for(i=x,j=y+1;j<=7;j++){
                     var iseven=(i+j)%2;
                     if(position[i][j]==0 || position[i][j]>=7){
                         var posno = (i*8)+j+1
@@ -203,8 +297,10 @@ function game(no){
                         break;
                     }    
                 }
-//        alert (i);
-        moveflag = 1 ;
+//        alert (willmove);
+        if(willmove[idnum+1]||willmove[idnum-1]||willmove[idnum+8]||willmove[idnum-8]){
+            moveflag = 1 ;
+        }
         movex = x;
         movey = y;
         moveno = no;
