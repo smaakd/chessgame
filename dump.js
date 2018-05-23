@@ -11,13 +11,11 @@ var whitequeen = "&#9813;";    //10
 var whiteking = "&#9812;";     //11
 var whitepawn = "&#9917";      //12
 var blackcircle = "&#8729;";  
-var gm = "game(this.id)";
-var mv = "move(this.id)";
+
 var moveflag = 0 ;
 var movex = 0;
 var movey = 0;
 var moveno = 0;
-var mode = 0;
 
 var start = document.getElementById('start');
 var p1 = document.getElementById('p1');
@@ -84,48 +82,28 @@ function begingame() {
 
 function game(no){
     if(moveflag){
-        return;
+        return  ;
     }
     idnum = parseInt(no);
     var y = parseInt((idnum-1) % 8);
     var x = parseInt((idnum-1) / 8);
     var pieceno = position[x][y];
    if (pieceno==6){
-        var iseven= (x+y)%2 ;
-        if(iseven){
-            document.getElementsByTagName("div")[idnum+8].setAttribute("class","blackr"); 
-            document.getElementsByTagName("div")[idnum+8].setAttribute("onclick",mv);  
-            willmove[idnum+8]= 1;
-            if(x==1){
-                document.getElementsByTagName("div")[idnum+16].setAttribute("class","whiter");
-                document.getElementsByTagName("div")[idnum+16].setAttribute("onclick",mv);
-                willmove[idnum+16]= 1;
-            }
-
-        }   
-        if(!iseven){
-            document.getElementsByTagName("div")[idnum+8].setAttribute("class","whiter"); 
-            document.getElementsByTagName("div")[idnum+8].setAttribute("onclick",mv);  
-            willmove[idnum+8]= 1;
-            if(x==1){
-                document.getElementsByTagName("div")[idnum+16].setAttribute("class","blackr");
-                document.getElementsByTagName("div")[idnum+16].setAttribute("onclick",mv);
-                willmove[idnum+16]= 1;
-            }
-
+        document.getElementById(idnum+8).innerHTML= blackcircle;
+        willmove[idnum+8]= 1;
+        if(x==1){
+            document.getElementById(idnum+16).innerHTML= blackcircle;
+            willmove[idnum+16]= 1;
         }
-        
         moveflag = 1 ;
         movex = x;
         movey = y;
         moveno = no;
         
     }
-   
 } 
 
 function move(no){
- 
     if(!moveflag){
         return;
     }
@@ -135,27 +113,35 @@ function move(no){
     if (willmove[no]){
         for (i=1;i<=64;i++){
             if(willmove[i]){
-                var y = parseInt((i-1) % 8);
-                var x = parseInt((i-1) / 8);
-                var iseven = (x+y)%2;
-                if(iseven){
-                    document.getElementsByTagName("div")[i].setAttribute("class","black");
-                    position[x][y]=position[movex][movey];
-                }
-                else {
-                    document.getElementsByTagName("div")[i].setAttribute("class","white");
-                    position[x][y]=position[movex][movey];
-                }
+                document.getElementById(i).innerHTML = "";
                 willmove[i]=0;
-                document.getElementsByTagName("div")[i].setAttribute("onclick",gm);
             }
-        }    
+        }
         document.getElementById(moveno).innerHTML = "";
         var finaltype = positionno(movex+1,movey+1);
         document.getElementById(no).innerHTML = finaltype;
         moveflag=0;
+        position[x][y]=position[movex][movey];
         position[movex][movey]=0;
     }
-  
 
 }
+
+
+/*for (i=1;i<=64;i++){
+                
+       
+}*/
+
+
+
+
+/*var p = document.getElementById("foo");
+        // NOTE: showAlert(); or showAlert(param); will NOT work here.
+        // Must be a reference to a function name, not a function call.
+        p.onclick = showAlert;
+      };
+
+      function showAlert(event) {
+        alert("onclick Event detected!");
+      }*/

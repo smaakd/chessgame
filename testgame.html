@@ -18,11 +18,31 @@
         display: table-cell;
         vertical-align:middle;
     }
+    .blackr {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(133, 34, 34);
+          font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
     .white {
         float: left;
         width: 100px;
         height: 100px;
         background-color: #fff;
+        font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
+    .whiter {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(241, 126, 126);
         font-size:50px;
         text-align:center;
         display: table-cell;
@@ -74,81 +94,81 @@
     </head>
     <body background="Background.jpg">
             
-    <div class="chessboard">
+    <div class="chessboard" >
     <!-- 1st -->
-    <div class="white" id="1" ></div>
-    <div class="black" id="2"></div>
-    <div class="white" id="3"></div>
-    <div class="black" id="4"></div>
-    <div class="white" id="5"></div>
-    <div class="black" id="6"></div>
-    <div class="white" id="7"></div>
-    <div class="black" id="8"></div>
-
-    <!-- 2nd -->
-    <div class="black" id="9"></div>
-    <div class="white" id="10"></div>
-    <div class="black" id="11"></div>
-    <div class="white" id="12"></div>
-    <div class="black" id="13"></div>
-    <div class="white" id="14"></div>
-    <div class="black" id="15"></div>
-    <div class="white" id="16"></div>
-
-    <!-- 3th -->
-    <div class="white" id="17"></div>
-    <div class="black" id="18"></div>
-    <div class="white" id="19"></div>
-    <div class="black" id="20"></div>
-    <div class="white" id="21"></div>
-    <div class="black" id="22"></div>
-    <div class="white" id="23"></div>
-    <div class="black" id="24"></div>
-    <!-- 4st -->
-    <div class="black" id="25"></div>
-    <div class="white" id="26"></div>
-    <div class="black" id="27"></div>
-    <div class="white" id="28"></div>
-    <div class="black" id="29"></div>
-    <div class="white" id="30"></div>
-    <div class="black" id="31"></div>
-    <div class="white" id="32"></div>
-    <!-- 5th -->
-    <div class="white" id="33"></div>
-    <div class="black" id="34"></div>
-    <div class="white" id="35"></div>
-    <div class="black" id="36"></div>
-    <div class="white" id="37"></div>
-    <div class="black" id="38"></div>
-    <div class="white" id="39"></div>
-    <div class="black" id="40"></div>
-    <!-- 6th -->
-    <div class="black" id="41"></div>
-    <div class="white" id="42"></div>
-    <div class="black" id="43"></div>
-    <div class="white" id="44"></div>
-    <div class="black" id="45"></div>
-    <div class="white" id="46"></div>
-    <div class="black" id="47"></div>
-    <div class="white" id="48"></div>
-    <!-- 7th -->
-    <div class="white" id="49"></div>
-    <div class="black" id="50"></div>
-    <div class="white" id="51"></div>
-    <div class="black" id="52"></div>
-    <div class="white" id="53"></div>
-    <div class="black" id="54"></div>
-    <div class="white" id="55"></div>
-    <div class="black" id="56"></div>
-    <!-- 8th -->
-    <div class="black" id="57"></div>
-    <div class="white" id="58"></div>
-    <div class="black" id="59"></div>
-    <div class="white" id="60"></div>
-    <div class="black" id="61"></div>
-    <div class="white" id="62"></div>
-    <div class="black" id="63"></div>
-    <div class="white" id="64"></div>
+    <div class="white" id="1"   value="" onclick="game(this.id)" ></div>
+    <div class="black" id="2"   value="" onclick="game(this.id)" ></div>
+    <div class="white" id="3"   value="" onclick="game(this.id)" ></div>
+    <div class="black" id="4"   value="" onclick="game(this.id)" ></div>
+    <div class="white" id="5"   value="" onclick="game(this.id)" ></div>
+    <div class="black" id="6"   value="" onclick="game(this.id)" ></div>
+    <div class="white" id="7"   value="" onclick="game(this.id)" ></div>
+    <div class="black" id="8"   value="" onclick="game(this.id)" ></div>
+ 
+    <!-- 2nd --> 
+    <div class="black" id="9"  value="" onclick="game(this.id)"></div>
+    <div class="white" id="10" value="" onclick="game(this.id)"></div>
+    <div class="black" id="11" value="" onclick="game(this.id)"></div>
+    <div class="white" id="12" value="" onclick="game(this.id)"></div>
+    <div class="black" id="13" value="" onclick="game(this.id)"></div>
+    <div class="white" id="14" value="" onclick="game(this.id)"></div>
+    <div class="black" id="15" value="" onclick="game(this.id)"></div>
+    <div class="white" id="16" value="" onclick="game(this.id)"></div>
+ 
+    <!-- 3th --> 
+    <div class="white" id="17" value="" onclick="game(this.id)"></div>
+    <div class="black" id="18" value="" onclick="game(this.id)"></div>
+    <div class="white" id="19" value="" onclick="game(this.id)"></div>
+    <div class="black" id="20" value="" onclick="game(this.id)"></div>
+    <div class="white" id="21" value="" onclick="game(this.id)"></div>
+    <div class="black" id="22" value="" onclick="game(this.id)"></div>
+    <div class="white" id="23" value="" onclick="game(this.id)"></div>
+    <div class="black" id="24" value="" onclick="game(this.id)"></div>
+    <!-- 4st --> 
+    <div class="black" id="25" value="" onclick="game(this.id)"></div>
+    <div class="white" id="26" value="" onclick="game(this.id)"></div>
+    <div class="black" id="27" value="" onclick="game(this.id)"></div>
+    <div class="white" id="28" value="" onclick="game(this.id)"></div>
+    <div class="black" id="29" value="" onclick="game(this.id)"></div>
+    <div class="white" id="30" value="" onclick="game(this.id)"></div>
+    <div class="black" id="31" value="" onclick="game(this.id)"></div>
+    <div class="white" id="32" value="" onclick="game(this.id)"></div>
+    <!-- 5th --> 
+    <div class="white" id="33" value="" onclick="game(this.id)"></div>
+    <div class="black" id="34" value="" onclick="game(this.id)"></div>
+    <div class="white" id="35" value="" onclick="game(this.id)"></div>
+    <div class="black" id="36" value="" onclick="game(this.id)"></div>
+    <div class="white" id="37" value="" onclick="game(this.id)"></div>
+    <div class="black" id="38" value="" onclick="game(this.id)"></div>
+    <div class="white" id="39" value="" onclick="game(this.id)"></div>
+    <div class="black" id="40" value="" onclick="game(this.id)"></div>
+    <!-- 6th --> 
+    <div class="black" id="41" value="" onclick="game(this.id)"></div>
+    <div class="white" id="42" value="" onclick="game(this.id)"></div>
+    <div class="black" id="43" value="" onclick="game(this.id)"></div>
+    <div class="white" id="44" value="" onclick="game(this.id)"></div>
+    <div class="black" id="45" value="" onclick="game(this.id)"></div>
+    <div class="white" id="46" value="" onclick="game(this.id)"></div>
+    <div class="black" id="47" value="" onclick="game(this.id)"></div>
+    <div class="white" id="48" value="" onclick="game(this.id)"></div>
+    <!-- 7th --> 
+    <div class="white" id="49" value="" onclick="game(this.id)"></div>
+    <div class="black" id="50" value="" onclick="game(this.id)"></div>
+    <div class="white" id="51" value="" onclick="game(this.id)"></div>
+    <div class="black" id="52" value="" onclick="game(this.id)"></div>
+    <div class="white" id="53" value="" onclick="game(this.id)"></div>
+    <div class="black" id="54" value="" onclick="game(this.id)"></div>
+    <div class="white" id="55" value="" onclick="game(this.id)"></div>
+    <div class="black" id="56" value="" onclick="game(this.id)"></div>
+    <!-- 8th --> 
+    <div class="black" id="57" value="" onclick="game(this.id)"></div>
+    <div class="white" id="58" value="" onclick="game(this.id)"></div>
+    <div class="black" id="59" value="" onclick="game(this.id)"></div>
+    <div class="white" id="60" value="" onclick="game(this.id)"></div>
+    <div class="black" id="61" value="" onclick="game(this.id)"></div>
+    <div class="white" id="62" value="" onclick="game(this.id)"></div>
+    <div class="black" id="63" value="" onclick="game(this.id)"></div>
+    <div class="white" id="64" value="" onclick="game(this.id)"></div>
     </div>
     <br>
     <br>
